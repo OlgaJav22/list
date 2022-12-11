@@ -39,6 +39,12 @@ public class PassengerCars extends Car {
         }
     }
 
+    public void performMaintenance() {
+    }
+
+    public void fixCar() {
+    }
+
     public BodyType getNamingBodyType() {
         return namingBodyType;
     }

@@ -39,6 +39,12 @@ public class Bus extends Car {
         }
     }
 
+    public void performMaintenance() {
+    }
+
+    public void fixCar() {
+    }
+
     public String toString() {
         return super.toString() + capacity;
     }

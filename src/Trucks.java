@@ -4,8 +4,11 @@ public class Trucks extends Car {
     }
 
 
+    public void performMaintenance() {
+    }
 
-
+    public void fixCar() {
+    }
 
     public String toString() {
         return super.toString();

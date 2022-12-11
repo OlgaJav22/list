@@ -1,3 +1,7 @@
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Objects;
+
 public class Driver<V extends Car>  {
 
     private String fullName;
@@ -6,6 +10,7 @@ public class Driver<V extends Car>  {
     public static final String LICENSE_BE = "есть";
     private String category;
     private final V car;
+    private List<V> drivers;
 
     public Driver(String fullName, boolean validDriversLicense, String category, int experience, V car) {
         setFullName(fullName);
@@ -19,8 +24,8 @@ public class Driver<V extends Car>  {
         this.car = car;
     }
 
-
-
+    public void addDriver (Driver<V> drivers) {
+    }
     public void refuelTheCar() {
         System.out.println("Необходимо заправиться");
 
@@ -59,10 +64,27 @@ public class Driver<V extends Car>  {
         return experience;
     }
 
+    public List<V> getDrivers() {
+        return drivers;
+    }
+
     public void setExperience(int experience) {
         if (experience > 3) {
             this.experience = experience;
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver<?> driver = (Driver<?>) o;
+        return validDriversLicense == driver.validDriversLicense && experience == driver.experience && Objects.equals(fullName, driver.fullName) && Objects.equals(category, driver.category) && Objects.equals(car, driver.car) && Objects.equals(drivers, driver.drivers);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullName, validDriversLicense, experience, category, car, drivers);
     }
 
     public String toString() {

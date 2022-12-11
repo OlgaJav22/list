@@ -1,12 +1,9 @@
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Objects;
+import java.util.*;
 
 public class Mechanic <T extends Car> {
     private String name;
     private String company;
-    private LinkedList<T> mechanic;
+    private List<T> mechanics;
 
     Mechanic (String name, String company) {
         if (name != null && !name.isBlank() && !name.isEmpty()) {
@@ -25,12 +22,15 @@ public class Mechanic <T extends Car> {
         System.out.println("Механик " + getName() + " чинит машину " + car.getBrand() + " " + car.getModel());
     }
 
-    public LinkedList <T> getMechanic(Mechanic mechanics) {
-        return mechanic;
+    public void addMechanic (Mechanic<?>...mechanics) {
     }
 
     public String getName() {
         return name;
+    }
+
+    public List<T> getMechanic() {
+        return mechanics;
     }
 
     public String getCompany() {
@@ -46,12 +46,12 @@ public class Mechanic <T extends Car> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Mechanic<?> mechanic1 = (Mechanic<?>) o;
-        return Objects.equals(name, mechanic1.name) && Objects.equals(company, mechanic1.company) && Objects.equals(mechanic, mechanic1.mechanic);
+        return Objects.equals(name, mechanic1.name) && Objects.equals(company, mechanic1.company) && Objects.equals(mechanics, mechanic1.mechanics);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, company, mechanic);
+        return Objects.hash(name, company, mechanics);
     }
 
     public int size() {
