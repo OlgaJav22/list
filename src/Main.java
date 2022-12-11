@@ -89,6 +89,17 @@ public class Main {
                 lukoil, michelin, start, system);
 
         System.out.println("\nВсего спонсоров - " + sponsors.size() + " компании.");
+
+        ServiceStation newQueue = new ServiceStation();
+        newQueue.addCar(lada);
+        newQueue.addCar(man);
+        newQueue.addCar(jac);
+        newQueue.addCar(audi);
+        newQueue.spendMaintenanceCar(lada);
+        newQueue.spendMaintenanceCar(man);
+        newQueue.spendMaintenanceCar(jac);
+//        newQueue.spendMaintenanceCar(audi);
+        System.out.println(newQueue.getQueue());
     }
 
     private static void printInfo(Car car) {
