@@ -136,7 +136,7 @@ public class Main {
         printInfo1(number2);
 
 
-        System.out.println("\nЗадание по коллекциям списки автомобилей/спонсоров и водителей");
+        System.out.println("\nЗадание по коллекциям списки механиков/спонсоров и водителей");
 
         Set<Sponsor> sponsors1 = new HashSet<>();
         sponsors1.add(lukoil);
