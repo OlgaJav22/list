@@ -1,5 +1,4 @@
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
 
@@ -100,6 +99,62 @@ public class Main {
         newQueue.spendMaintenanceCar(jac);
 //        newQueue.spendMaintenanceCar(audi);
         System.out.println(newQueue.getQueue());
+
+
+        List<String> name = List.of(
+                "Мария Иванова", "Павел Дуров", "Иван Козлов", "Валентина Маслова", "Ольга Петровна",
+                "Сергей Горлов", "Евгений Носов", "Валентин Ушаков", "Алина Захарова", "Марина Шарова",
+                "Людмила Ивановна", "Петр Семенович", "Глеб Морозов");
+
+        Magnet number1 = new Magnet();
+        Magnet number2 = new Magnet();
+        number1.addShopper("Мария Ивановна");
+        number1.addShopper("Павел Дуров");
+        number1.addShopper("Иван Козлов");
+        number1.addShopper("Валентина Маслова");
+        number1.addShopper("Ольга Петровна");
+        number1.addShopper("Сергей Горлов");
+        number1.addShopper("Ольга Серова");
+        number1.addShopper("Павел Морозов");
+        number2.addShopper("Лариса Петровна");
+        number1.addShopper("Марик");
+        number2.addShopper("Лора");
+        number2.addShopper("Галина Ивановна");
+        number2.addShopper("Нарек Газарян");
+        number1.addShopper("Максим Антонович");
+        number2.addShopper("Антон Зайцев");
+        number2.addShopper("Алина Захарова");
+        number2.addShopper("Валентин Ушаков");
+        number2.addShopper("Марина Шарова");
+        number2.addShopper("Людмила Ивановна");
+        number2.addShopper("Петр Семеноваич");
+        number2.addShopper("Глеб Морозов");
+        number2.addShopper("Евгений Носов");
+
+        printInfo1(number1);
+        System.out.println();
+        printInfo1(number2);
+
+
+        System.out.println("\nЗадание по коллекциям списки автомобилей/спонсоров и водителей");
+
+        Set<Sponsor> sponsors1 = new HashSet<>();
+        sponsors1.add(lukoil);
+        sponsors1.add(michelin);
+        sponsors1.add(start);
+        SponsorList sponsorList = new SponsorList(sponsors1);
+        System.out.println(sponsorList);
+//        sponsorList.add(lukoil);
+
+        Set<Mechanic> mechanics1 = new HashSet<>();
+        mechanics1.add(vlad);
+        mechanics1.add(zurab);
+        mechanics1.add(sergei);
+        MexhanicList mexhanicList = new MexhanicList(mechanics1);
+        System.out.println(mexhanicList);
+        mexhanicList.add(sergei);
+        mexhanicList.add(vlad);
+        System.out.println(mexhanicList);
     }
 
     private static void printInfo(Car car) {
@@ -108,5 +163,9 @@ public class Main {
         System.out.println("Спонсоры: " + car.getSponsors());
         System.out.println("Механики: " + car.getMechanics());
         System.out.println();
+    }
+
+    private static void printInfo1(Magnet number) {
+        System.out.println("В первой очереди: " + number.getNumber1() + ". Во второй " + number.getNumber2());
     }
 }

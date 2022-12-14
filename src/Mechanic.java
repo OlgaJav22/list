@@ -45,13 +45,13 @@ public class Mechanic <T extends Car> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Mechanic<?> mechanic1 = (Mechanic<?>) o;
-        return Objects.equals(name, mechanic1.name) && Objects.equals(company, mechanic1.company) && Objects.equals(mechanics, mechanic1.mechanics);
+        Mechanic<?> mechanic = (Mechanic<?>) o;
+        return Objects.equals(name, mechanic.name) && Objects.equals(company, mechanic.company);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, company, mechanics);
+        return Objects.hash(name, company);
     }
 
     public int size() {

@@ -1,5 +1,4 @@
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Sponsor<S extends Car> {
     private String name;
@@ -19,9 +18,9 @@ public class Sponsor<S extends Car> {
         return sponsors;
     }
 
-    public void addSponsor (Sponsor<?>...sponsors) {
+    public void addSponsor (Sponsor<?>...sponsor) {
+          }
 
-    }
 
     public void sponsorTheRace() {
         System.out.printf("Спонсор %s проспонсировал заезд %d%n", name,sumSupport);
@@ -41,6 +40,19 @@ public class Sponsor<S extends Car> {
         } else {
             System.out.println("Внесите сумму поддержки");
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sponsor<?> sponsor = (Sponsor<?>) o;
+        return Objects.equals(name, sponsor.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 
     @Override
